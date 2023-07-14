@@ -1,0 +1,26 @@
+.feedback__list {
+  list-style: none;
+  display: flex;
+  gap: 5px;
+}
+
+.feedback__button {
+  padding: 5px 20px;
+  cursor: pointer;
+  text-transform: capitalize;
+  background-color: white;
+  border: 1px solid rgba(100, 100, 100, 0.5);
+  border-radius: 10%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  font-weight: bold;
+
+  background-color: var(--secondary--fg-dark);
+  color: var(--secondary--bg-dark);
+  transition: color 250ms ease, background-color 250ms ease;
+  
+  &:hover,
+  &:focus {
+      background-color: var(--main--bg-dark);
+      color: var(--main--fg-dark);
+  }
+}
