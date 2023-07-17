@@ -1,21 +1,19 @@
-import { useState } from 'react';
+import { useReducer } from 'react';
 import Statistics from './Statistics/Statistics';
 import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
 import Notification from './Notification/Notification';
-
+import { reducer } from './reducer';
 
 export const App = () => {
-  const [feedback, setFeedback] = useState({
+
+  const [feedback, dispatch] = useReducer(reducer, {
     good: 0,
     neutral: 0,
     bad: 0,
   });
 
   const handleClickFeedback = feedbackType => {
-    setFeedback(prevFeedback => ({
-      ...prevFeedback,
-      [feedbackType]: prevFeedback[feedbackType] + 1,
-    }));
+    dispatch({type: feedbackType})
   };
 
   const countTotalFeedback = () => {
